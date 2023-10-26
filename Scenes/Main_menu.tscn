@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy1ub3mddb8oc"]
+
+[ext_resource type="Script" path="res://Scripts/Main_menu.gd" id="1_l2jvu"]
+[ext_resource type="Texture2D" uid="uid://bbcxiopqyqpe" path="res://Assets/Img/Tampilan Awal (1).png" id="2_60iea"]
+[ext_resource type="Texture2D" uid="uid://dc72gqn8kingk" path="res://Assets/Img/back-button (1).png" id="3_hdnqg"]
+[ext_resource type="Texture2D" uid="uid://coup0sgl7rp6h" path="res://Assets/Img/menu (1).png" id="4_ieav4"]
+[ext_resource type="Texture2D" uid="uid://dhm0gi2h8v1wo" path="res://Assets/Img/play (1).png" id="5_gxnl4"]
+[ext_resource type="FontFile" uid="uid://edx8p7flegp4" path="res://Assets/Font/Charu_Chandan_BloodDrip_Unicode-Regular.ttf" id="6_8rxub"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l2jvu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(566, 324)
+texture = ExtResource("2_60iea")
+offset = Vector2(10, 0)
+
+[node name="Sprite2D3" type="TextureButton" parent="Sprite2D"]
+offset_left = -533.0
+offset_top = -293.0
+offset_right = -21.0
+offset_bottom = 219.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("3_hdnqg")
+
+[node name="Sprite2D4" type="TextureButton" parent="Sprite2D"]
+offset_left = 466.0
+offset_top = -293.0
+offset_right = 978.0
+offset_bottom = 219.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("4_ieav4")
+
+[node name="TextureButton" type="TextureButton" parent="Sprite2D"]
+offset_left = -113.0
+offset_top = 1.0
+offset_right = 399.0
+offset_bottom = 513.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_gxnl4")
+
+[node name="TextEdit" type="Label" parent="."]
+offset_left = 212.0
+offset_top = 133.0
+offset_right = 957.0
+offset_bottom = 302.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("6_8rxub")
+theme_override_font_sizes/font_size = 120
+text = "TEROR ZOMBIE"
+
+[connection signal="pressed" from="Sprite2D/Sprite2D3" to="." method="_on_sprite_2d_3_pressed"]
+[connection signal="pressed" from="Sprite2D/Sprite2D4" to="." method="_on_sprite_2d_4_pressed"]
+[connection signal="pressed" from="Sprite2D/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Sprite2D/TextureButton" to="Sprite2D/TextureButton" method="_on_pressed"]

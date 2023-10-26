@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ofcr56db286"]
+
+[ext_resource type="Texture2D" uid="uid://c7xjjjlo2lyj3" path="res://Assets/Img/Loading.png" id="1_bex1c"]
+[ext_resource type="Script" path="res://Scripts/Loading.gd" id="1_pc03e"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_pc03e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 322)
+scale = Vector2(1.01217, 1.02154)
+texture = ExtResource("1_bex1c")
+
+[node name="TextureButton" type="TextureButton" parent="Sprite2D"]
+offset_left = -573.0
+offset_top = -316.0
+offset_right = 573.0
+offset_bottom = 319.0
+
+[connection signal="pressed" from="Sprite2D/TextureButton" to="." method="_on_texture_button_pressed"]

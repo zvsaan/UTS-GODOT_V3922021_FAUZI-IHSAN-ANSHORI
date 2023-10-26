@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxqbu0polfmi"]
+
+[ext_resource type="Script" path="res://Scripts/Level3.gd" id="1_c0ntt"]
+[ext_resource type="Texture2D" uid="uid://bbcxiopqyqpe" path="res://Assets/Img/Tampilan Awal (1).png" id="1_mvmex"]
+[ext_resource type="Texture2D" uid="uid://c7q21us452wqb" path="res://Assets/Img/circle-3.png" id="2_6f0pt"]
+[ext_resource type="FontFile" uid="uid://edx8p7flegp4" path="res://Assets/Font/Charu_Chandan_BloodDrip_Unicode-Regular.ttf" id="3_a1nol"]
+[ext_resource type="Texture2D" uid="uid://da21cwpo4dp3v" path="res://Assets/Img/fast-forward.png" id="4_su1t4"]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_c0ntt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(566, 324)
+texture = ExtResource("1_mvmex")
+offset = Vector2(10, 0)
+
+[node name="Lv1" type="TextureButton" parent="Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -692.0
+offset_top = -424.0
+offset_right = -180.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_6f0pt")
+
+[node name="TextEdit" type="Label" parent="Sprite2D"]
+offset_left = -222.0
+offset_top = -265.0
+offset_right = 229.0
+offset_bottom = -138.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("3_a1nol")
+theme_override_font_sizes/font_size = 90
+text = "PILIH LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="TextureButton" parent="Sprite2D"]
+offset_left = -228.0
+offset_top = 81.0
+offset_right = 284.0
+offset_bottom = 593.0
+rotation = 3.14159
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("4_su1t4")
+
+[connection signal="pressed" from="Sprite2D/Lv1" to="." method="_on_lv_1_pressed"]
+[connection signal="pressed" from="Sprite2D/back" to="." method="_on_back_pressed"]
